@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thresholds | A Golden Thread Initiative</title>
+  <meta name="description" content="Thresholds is a free walking installation of five steel archways along the East Boston waterfront, each telling the story of a place that was made, not found.">
+  <link rel="canonical" href="https://thread.boston/">
+
+  <!-- Social sharing cards (Open Graph + Twitter) -->
+  <meta property="og:site_name" content="Thresholds | A Golden Thread Initiative">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thread.boston/">
+  <meta property="og:title" content="Thresholds | A Golden Thread Initiative">
+  <meta property="og:description" content="A free walking installation of five steel archways along the East Boston waterfront, each telling the story of a place that was made, not found.">
+  <meta property="og:image" content="https://thread.boston/grfx/og/og-home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Thresholds arch, a weathered-steel archway glowing at sunset beside the East Boston greenway, with Boston Harbor beyond">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thresholds | A Golden Thread Initiative">
+  <meta name="twitter:description" content="A free walking installation of five steel archways along the East Boston waterfront, each telling the story of a place that was made, not found.">
+  <meta name="twitter:image" content="https://thread.boston/grfx/og/og-home.jpg">
+
+  <!-- Favicons: Starboard logo — SVG for modern browsers, multi-size ICO fallback,
+       apple-touch-icon (iOS home screen), site.webmanifest 192/512 PNGs (Android) -->
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="grfx/Starboard-Logo-Bright-Transparent.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0B1E26">
+
+  <!-- GFS Didot (running text) from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap" rel="stylesheet">
+
+  <!-- Self-hosted brand fonts (declared in site.css); preloaded so the
+       above-the-fold display/gothic text doesn't wait on CSS discovery. -->
+  <link rel="preload" href="fonts/LuloCleanW01OneBold.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="fonts/SackersGothicLight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/SackersGothicHeavy.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Tailwind CSS via CDN (Play CDN), as requested. Pinned for stability. -->
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    /* Brand tokens sampled from the Starboard mockup PDF */
+    tailwind.config = {
+      theme: {
+        extend: {
+          maxWidth: {
+            site: '560px',
+          },
+          colors: {
+            ink:  '#0B1E26',   /* deep harbor blue */
+            gold: '#ccb283',   /* golden thread */
+          },
+          fontFamily: {
+            display: ['"Lulo Clean One Bold"', '"Sackers Gothic"', 'sans-serif'], /* stamped display caps */
+            gothic:  ['"Sackers Gothic"', 'sans-serif'],  /* wordmark, years & letterspaced caps (weights: light 300 / medium 500 / bold 700) */
+            serif:   ['"GFS Didot"', 'Didot', 'Georgia', 'serif'],                /* running text */
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Shared styles: brand fonts, dialog backdrops, scroll reveal, focus rings -->
+  <link rel="stylesheet" href="site.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "NonprofitOrganization",
+        "@id": "https://starboard.boston/#org",
+        "name": "Starboard Institute, Inc.",
+        "alternateName": "Project Starboard",
+        "url": "https://starboard.boston",
+        "email": "david@starboard.boston",
+        "telephone": "+1-617-640-0676",
+        "logo": "https://thread.boston/grfx/favicon-512.png",
+        "sameAs": [
+          "https://www.linkedin.com/company/projectstarboard",
+          "https://www.facebook.com/projectstarboardboston",
+          "https://www.instagram.com/projectstarboard"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://thread.boston/#website",
+        "name": "Thresholds | A Golden Thread Initiative",
+        "url": "https://thread.boston/",
+        "publisher": { "@id": "https://starboard.boston/#org" }
+      },
+      {
+        "@type": "TouristAttraction",
+        "name": "Thresholds — The Golden Thread",
+        "description": "A free walking installation of five steel archways along the East Boston waterfront, each telling the story of a place that was made, not found.",
+        "url": "https://thread.boston/",
+        "image": "https://thread.boston/grfx/og/og-home.jpg",
+        "isAccessibleForFree": true,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "East Boston",
+          "addressRegion": "MA",
+          "addressCountry": "US"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="bg-ink font-serif text-white antialiased selection:bg-gold selection:text-ink">
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ============ Header ============ -->
+  <header class="bg-ink">
+    <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3">
+      <a href="index.html" aria-label="Thresholds home">
+        <img src="grfx/GoldenThread-Header-WordmarkSlogan.svg"
+             alt="" width="210" height="56"
+             class="h-14 w-auto">
+      </a>
+      <button data-opens-menu aria-label="Open menu" aria-haspopup="dialog" aria-controls="menu" aria-expanded="false" class="group -mr-2 flex flex-col items-end gap-2 p-2">
+        <span class="h-0.5 w-10 bg-gold transition-all group-hover:w-8"></span>
+        <span class="h-0.5 w-10 bg-gold transition-all group-hover:w-12"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ Hero ============ -->
+    <section class="relative flex min-h-[90svh] items-start overflow-hidden">
+      <!-- Thresholds arch at sunset, tinted into the harbor-green duotone of the mockup -->
+      <!-- Extends 3rem above the section so the downward parallax drift never
+           exposes a gap along the top edge. -->
+      <img src="images/photo-hero-arch-sunset.png" data-parallax
+           alt="The Thresholds arch, a weathered-steel archway glowing at sunset beside the greenway path, with Boston Harbor and the skyline behind it"
+           width="1297" height="946"
+           class="absolute -top-12 left-0 h-[calc(100%+3rem)] w-full object-cover object-[30%_50%] opacity-90 will-change-transform"
+           fetchpriority="high">
+      <!-- Teal tint + fade into the page background -->
+      <div class="absolute inset-0 bg-ink/40 mix-blend-multiply" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-ink/30 via-transparent to-ink" aria-hidden="true"></div>
+
+      <div class="relative mx-auto mt-[25svh] w-full max-w-4xl px-4 text-center">
+        <h1 class="font-display text-3xl leading-loose text-gold md:text-5xl md:leading-relaxed">
+          Discover the thresholds
+        </h1>
+        <p class="mt-2 font-gothic font-light tracking-[0.1em] text-white md:text-2xl uppercase md:leading-relaxed leading-loose">
+          Weaving East Boston's story through history, innovation, and culture.
+        </p>
+      </div>
+
+      <!-- Scroll cue: chevron centered along the hero's bottom edge, leading into
+           the story. Centered via inset-x + w-fit (not translate-x, which the
+           bounce keyframes' transform would override). -->
+      <a href="#story" aria-label="Scroll down to the story"
+         class="group absolute inset-x-0 bottom-5 mx-auto w-fit p-3">
+        <img src="grfx/icon-chevron-down.png" alt="" width="260" height="159"
+             class="w-8 opacity-70 transition-opacity group-hover:opacity-100 motion-safe:animate-bounce">
+      </a>
+    </section>
+
+    <!-- ============ Explore the golden thread (threshold cards) ============ -->
+    <!-- Card grid per the home mockup: 2-up on mobile, 3-up on desktop, ending
+         with the START cue. Each gold block is that threshold's photo slot;
+         until the photo asset is ready it carries the status text instead
+         ("Coming soon" / countdown). Every card links to its threshold page. -->
+    <section id="story" class="relative mx-auto max-w-6xl px-4 pb-20 pt-10 md:pt-20">
+      <h2 class="text-center font-display text-sm font-bold uppercase tracking-[0.1em] text-gold md:text-base">
+        Explore the golden thread:
+      </h2>
+
+      <ul class="reveal my-8 grid grid-cols-2 gap-x-4 gap-y-10 md:my-12 md:grid-cols-3 md:gap-x-6">
+
+        <!-- Threshold 1 -->
+        <li>
+          <a href="threshold1.html" class="group block">
+            <span class="flex aspect-[8/5] items-center justify-center bg-gold px-2 transition-opacity group-hover:opacity-90">
+              <span class="font-gothic text-xs font-bold uppercase tracking-[0.15em] text-ink md:text-sm">Coming soon</span>
+            </span>
+            <span class="mt-3 block font-gothic text-xs font-bold uppercase leading-relaxed tracking-[0.15em] text-white">The Golden Stairs</span>
+          </a>
+        </li>
+
+        <!-- Threshold 2 -->
+        <li>
+          <a href="threshold2.html" class="group block">
+            <span role="img" aria-label="Archival photograph of Donald McKay's shipyard before the 1869 launch of the Glory of the Seas" class="block aspect-[8/5] bg-gold bg-[url('images_v3/Threshold_2_1868_2160.jpeg')] bg-cover bg-center bg-no-repeat transition-opacity group-hover:opacity-90"></span>
+            <span class="mt-3 block font-gothic text-xs font-bold uppercase leading-relaxed tracking-[0.15em] text-white">Lewis Mall Wharf</span>
+          </a>
+        </li>
+
+        <!-- Threshold 3 -->
+        <li>
+          <a href="threshold3.html" class="group block">
+            <span role="img" aria-label="Archival photograph of Donald McKay's shipyard before the 1869 launch of the Glory of the Seas" class="block aspect-[8/5] bg-gold bg-[url('images/photo-1869-mckay-shipyard.jpg')] bg-cover bg-center bg-no-repeat transition-opacity group-hover:opacity-90"></span>
+            <span class="mt-3 block font-gothic text-xs font-bold uppercase leading-relaxed tracking-[0.15em] text-white">Atlantic Works Shipyard</span>
+          </a>
+        </li>
+
+        <!-- Threshold 4 -->
+        <li>
+          <a href="threshold4.html" class="group block">
+            <span class="flex aspect-[8/5] items-center justify-center bg-gold px-2 transition-opacity group-hover:opacity-90">
+              <span class="font-gothic text-xs font-bold uppercase tracking-[0.15em] text-ink md:text-sm">Coming soon</span>
+            </span>
+            <span class="mt-3 block font-gothic text-xs font-bold uppercase leading-relaxed tracking-[0.15em] text-white">Central Square</span>
+          </a>
+        </li>
+
+        <!-- Threshold 5, live -->
+        <li>
+          <a href="bremen.html" class="group block">
+            <span role="img" aria-label="Aerial photograph of East Boston's working rail yard in 1928" class="block aspect-[8/5] bg-gold bg-[url('images/photo-1928-rail-yard-aerial.png')] bg-cover bg-center bg-no-repeat transition-opacity group-hover:opacity-90"></span>
+            <span class="mt-3 block font-gothic text-xs font-bold uppercase leading-relaxed tracking-[0.15em] text-white">Bremen Street Park</span>
+          </a>
+        </li>
+
+        <!-- START cue, pointing at Threshold 1 (the first stop on the trail; its page is still "coming soon") -->
+        <li>
+          <a href="threshold1.html" aria-label="Start at Threshold 1, The Golden Stairs"
+             class="group flex aspect-[8/5] items-center justify-center gap-2 font-gothic text-sm font-bold uppercase tracking-[0.25em] text-gold transition-opacity hover:opacity-75 md:text-base">
+            Start
+            <svg class="h-6 w-6 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ Meet the Makers CTA ============ -->
+    <section class="relative flex min-h-[45svh] items-center overflow-hidden py-8 bg-black/30">
+      <img src="images_v2/Threshold-WhosMakingAllThis-Section-Welder.jpg" alt=""
+           aria-hidden="true" width="1206" height="2016" loading="lazy" decoding="async"
+           class="absolute inset-0 h-full w-full object-cover object-[center_65%] opacity-40">
+      <!-- Subtle inner shadow along the top and bottom edges (~80px diffusion, no
+           offset). Lives on its own layer because an inset shadow on the section
+           would paint beneath the absolutely-positioned photo. -->
+      <div class="pointer-events-none absolute inset-0 shadow-[inset_0_80px_80px_-80px_rgba(0,0,0,0.7),inset_0_-80px_80px_-80px_rgba(0,0,0,0.7)]" aria-hidden="true"></div>
+      <div class="reveal relative mx-auto w-full max-w-6xl px-6">
+        <h2 class="font-display text-2xl leading-loose tracking-[0.14em] text-gold md:text-4xl md:leading-relaxed">
+          Who's Making All This?
+        </h2>
+        <div class="pt-4 pb-12 font-gothic font-light leading-loose tracking-[0.1em] text-white md:text-xl uppercase md:leading-relaxed">
+          Meet Project Starboard and the partners bringing the Golden Thread to life.
+        </div>
+        <!-- Same treatment as the START cue in the card grid: gothic caps + chevron -->
+        <a href="https://starboard.boston" target="_blank" rel="noopener"
+           class="group inline-flex items-center gap-2 font-gothic text-sm font-bold uppercase tracking-[0.25em] text-gold transition-opacity hover:opacity-75 md:text-base">
+          Meet the Makers
+          <svg class="h-6 w-6 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- ============ The future / call to action ============ -->
+    <section class="reveal pt-24 text-center md:pt-32 bg-black/20">
+      <h2 class="mx-auto max-w-3xl px-6 font-display text-2xl uppercase leading-loose tracking-[0.14em] text-gold md:text-4xl md:leading-relaxed">
+        The future is ours to make.
+      </h2>
+      <div class="mx-auto max-w-3xl px-6 py-10 font-gothic font-light leading-loose tracking-[0.1em] text-white md:text-xl uppercase">
+        Help weave the story
+      </div>
+
+      <!-- Pill CTA: donate through Zeffy. Stands in for the email-list signup until that list is set up. -->
+      <a href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-16584" target="_blank" rel="noopener"
+         class="inline-block whitespace-nowrap rounded-full bg-gold px-8 py-5 font-display text-[0.7rem] uppercase text-ink ring-1 ring-gold ring-offset-4 ring-offset-ink transition-colors hover:bg-gold/90 md:px-12 md:text-sm">
+        Support
+      </a>
+
+      <!-- Row of threshold arches; the outer pair intentionally bleeds off-screen on mobile -->
+      <div class="mt-20 flex justify-center gap-4 overflow-hidden md:gap-8" aria-hidden="true">
+        <span class="h-32 w-24 shrink-0 rounded-t-full border border-gold/80 md:h-52 md:w-36"></span>
+        <span class="h-32 w-24 shrink-0 rounded-t-full border border-gold/80 md:h-52 md:w-36"></span>
+        <span class="h-32 w-24 shrink-0 rounded-t-full border border-gold/80 md:h-52 md:w-36"></span>
+        <span class="h-32 w-24 shrink-0 rounded-t-full border border-gold/80 md:h-52 md:w-36"></span>
+        <span class="h-32 w-24 shrink-0 rounded-t-full border border-gold/80 md:h-52 md:w-36"></span>
+      </div>
+
+      <div class="mx-auto mt-12 h-px w-56 bg-gold/70 md:w-72" aria-hidden="true"></div>
+
+      <p class="mt-8 font-gothic text-lg font-bold uppercase tracking-wide text-gold md:text-2xl">The Golden Thread</p>
+      <p class="mt-3 font-gothic text-xs font-medium uppercase tracking-[0.25em]">East Boston</p>
+
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="pt-24 pb-16 text-center md:pt-32 bg-black/20">
+
+      <!-- Social Links -->
+      <ul class="mt-14 flex items-center justify-center gap-6 text-gold">
+        <li>
+          <a target="_blank" rel="noopener" href="https://maps.app.goo.gl/cSsR5FhQg6YZ57nm7" aria-label="Location" class="block transition-opacity hover:opacity-75">
+            <svg class="h-9 w-9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:david@starboard.boston" aria-label="Email" class="block transition-opacity hover:opacity-75">
+            <svg class="h-9 w-9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
+              <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="tel:+1-617-640-0676" aria-label="Phone" class="block transition-opacity hover:opacity-75">
+            <svg class="h-9 w-9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" rel="noopener" href="https://www.linkedin.com/company/projectstarboard" aria-label="LinkedIn" class="block transition-opacity hover:opacity-75">
+            <svg class="h-9 w-9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" rel="noopener" href="https://www.facebook.com/projectstarboardboston" aria-label="Facebook" class="block transition-opacity hover:opacity-75">
+            <svg class="h-9 w-9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" rel="noopener" href="https://www.instagram.com/projectstarboard" aria-label="Instagram" class="block transition-opacity hover:opacity-75">
+            <svg class="h-9 w-9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Compass star sign-off: the star links out to Project Starboard -->
+      <div class="mt-16 flex items-center justify-center">
+          <a href="https://www.starboard.boston/" target="_blank" rel="noopener" aria-label="Project Starboard" class="block transition-opacity hover:opacity-75">
+            <img src="grfx/Starboard-Logo-Bright-Transparent.svg" alt="" width="80" height="80" loading="lazy" class="h-20 w-20">
+          </a>
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="https://www.starboard.boston/" target="_blank" rel="noopener" class="inline-block font-gothic text-xs font-light uppercase tracking-[0.25em] text-gold md:text-sm text-balance no-underline transition-opacity hover:opacity-75">Stewarded by Project Starboard</a>
+      </div>
+
+      <p class="mt-14 px-6 text-sm leading-relaxed text-white/95">
+        Copyright &copy; Starboard Institute, Inc.,<br>
+        a 501(c)(3) Nonprofit Organization
+      </p>
+  </footer>
+
+  <!-- ============ Menu dialog (header hamburger) ============ -->
+  <!-- Full-screen takeover per the mobile-nav mockup: the page header repeats
+       with a close button in the hamburger's place, then the threshold links
+       and the footer's CTA / contact / sign-off elements. -->
+  <dialog id="menu" aria-label="Menu"
+          class="h-full max-h-none w-full max-w-none bg-ink/75 p-0 text-white backdrop-blur-md">
+    <div class="h-full overflow-y-auto">
+      <div class="mx-auto flex min-h-full w-full max-w-6xl flex-col px-4 pb-12 pt-3">
+
+        <!-- Close row: the X sits where the header hamburger is (same gutter
+             and row height as the page header) so the takeover feels seamless -->
+        <div class="flex min-h-14 items-center justify-end">
+          <form method="dialog">
+            <button aria-label="Close menu" class="-mr-2 block p-2 text-gold transition-opacity hover:opacity-75">
+              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                <path d="M4.5 4.5l15 15M19.5 4.5l-15 15"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- Threshold links: every threshold page is live and links directly. -->
+        <nav aria-label="Thresholds" class="mt-6">
+          <ul class="space-y-5 text-center">
+            <li>
+              <a href="threshold1.html" class="inline-block font-gothic text-gold transition-colors hover:text-white">
+                <span class="text-xs uppercase">Threshold 1</span><br /><span class="text-xl font-bold uppercase">The Golden Stairs</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="threshold2.html" class="inline-block font-gothic text-gold transition-colors hover:text-white">
+                <span class="text-xs uppercase">Threshold 2</span><br /><span class="text-xl font-bold uppercase">Lewis Mall Wharf</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="threshold3.html" class="inline-block font-gothic text-gold transition-colors hover:text-white">
+                <span class="text-xs uppercase">Threshold 3</span><br /><span class="text-xl font-bold uppercase">Atlantic Works Shipyard</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="threshold4.html" class="inline-block font-gothic text-gold transition-colors hover:text-white">
+                <span class="text-xs uppercase">Threshold 4</span><br /><span class="text-xl font-bold uppercase">Central Square</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="bremen.html" class="inline-block font-gothic text-gold transition-colors hover:text-white">
+                <span class="text-xs uppercase">Threshold 5</span><br /><span class="text-xl font-bold uppercase">Bremen Street Park</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Pushes the CTA/footer cluster toward the bottom on tall screens -->
+        <div class="flex-1" aria-hidden="true"></div>
+
+        <!-- Pill CTA, same treatment as "Explore all thresholds" -->
+        <p class="mt-12 text-center">
+          <a target="_blank" rel="noopener" href="https://www.starboard.boston/"
+             class="inline-block whitespace-nowrap rounded-full bg-gold px-8 py-5 font-display text-[0.7rem] text-ink ring-1 ring-gold ring-offset-4 ring-offset-ink transition-colors hover:bg-gold/90 md:px-12 md:text-sm">
+            Meet the Makers
+          </a>
+        </p>
+
+        <!-- Contact icons, reused from the footer (location / email / phone per the mockup) -->
+        <ul class="mt-12 flex items-center justify-center gap-6 text-gold">
+          <li>
+            <a target="_blank" rel="noopener" href="https://maps.app.goo.gl/cSsR5FhQg6YZ57nm7" aria-label="Location" class="block transition-opacity hover:opacity-75">
+              <svg class="h-9 w-9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:david@starboard.boston" aria-label="Email" class="block transition-opacity hover:opacity-75">
+              <svg class="h-9 w-9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
+                <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="tel:+1-617-640-0676" aria-label="Phone" class="block transition-opacity hover:opacity-75">
+              <svg class="h-9 w-9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+
+        <div class="mx-auto mt-10 h-px w-full max-w-2xl bg-gold/70" aria-hidden="true"></div>
+
+        <!-- Compass star sign-off, reused from the footer -->
+        <div class="mt-10 flex items-center justify-center" aria-hidden="true">
+          <img src="grfx/Starboard-Logo-Bright-Transparent.svg" alt="" width="80" height="80" loading="lazy" class="h-20 w-20">
+        </div>
+
+        <div class="mt-10 text-center">
+          <p class="font-gothic text-xs font-light uppercase tracking-[0.25em] text-gold md:text-sm text-balance">Stewarded by Project Starboard</p>
+        </div>
+
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Shared behavior: menu/citations/lightbox dialogs, scroll reveal, parallax -->
+  <script src="site.js"></script>
+</body>
+</html>

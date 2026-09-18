@@ -1,0 +1,100 @@
+/* Shared site styles for all pages (index + threshold1–5).
+   Tailwind utilities come from the Play CDN; this file carries everything
+   Tailwind can't: @font-face, dialog ::backdrop, scroll-reveal, focus rings,
+   and the skip link. */
+
+/* Self-hosted brand fonts from fonts/ (Didot comes from Google Fonts). */
+@font-face {
+  font-family: "Lulo Clean One Bold";
+  src: url("fonts/LuloCleanW01OneBold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* Sackers Gothic: one family, three weights, selected via font-light/medium/bold */
+@font-face {
+  font-family: "Sackers Gothic";
+  src: url("fonts/SackersGothicLight.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sackers Gothic";
+  src: url("fonts/SackersGothicMedium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sackers Gothic";
+  src: url("fonts/SackersGothicHeavy.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Keyboard focus: the browser default ring is invisible against the ink
+   background, so paint a gold ring instead (only for keyboard focus). */
+:focus-visible {
+  outline: 2px solid #ccb283; /* gold */
+  outline-offset: 3px;
+}
+
+/* Skip link: visually hidden until it receives keyboard focus, then drops
+   in over the header. Plain CSS so it works before Tailwind's CDN runs. */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 0.75rem;
+  z-index: 50;
+  padding: 0.75rem 1.25rem;
+  background: #ccb283; /* gold */
+  color: #000;      /* ink */
+  font-size: 0.875rem;
+  text-decoration: none;
+  transform: translateY(-250%);
+}
+.skip-link:focus {
+  transform: none;
+}
+
+/* Frosted ink mask behind open dialogs: page stays 25% visible under a blur
+   (Tailwind can't reach ::backdrop on the CDN build). */
+dialog::backdrop {
+  background: rgba(14, 27, 28, 0.75); /* ink @ 75% */
+  -webkit-backdrop-filter: blur(12px); /* matches the menu's backdrop-blur-md */
+  backdrop-filter: blur(12px);
+}
+/* The full-screen menu is its own frosted ink mask (bg-ink/75 + blur), so
+   its backdrop must stay clear or the two layers stack to near-opaque. */
+#menu::backdrop {
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+/* Freeze the page (and retract its scrollbar) behind the full-screen menu,
+   so the takeover truly spans edge to edge on desktop scrollbars. */
+body:has(#menu[open]) {
+  overflow: hidden;
+}
+/* Scroll reveal: every direct child of the .reveal container fades in over
+   300ms as it enters the viewport. Hidden state only applies once JS has
+   tagged <html> with .js, so content stays visible without JavaScript;
+   skipped for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  /* Animated in-page scrolling (hero chevron -> #story); instant jump
+     under reduced motion. */
+  html {
+    scroll-behavior: smooth;
+  }
+  html.js .reveal > * {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 300ms ease-out, transform 300ms ease-out;
+  }
+  html.js .reveal > .is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}

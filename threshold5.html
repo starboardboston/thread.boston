@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting to thread.boston/bremen</title>
+  <!-- Threshold 5 moved to /bremen (the URL printed on the signage QR code).
+       GitHub Pages has no server-side redirects, so this stub does it client-side:
+       meta refresh for browsers/crawlers, canonical so search engines credit /bremen,
+       JS to carry any ?query/#hash across. -->
+  <link rel="canonical" href="https://thread.boston/bremen">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url=/bremen">
+  <script>location.replace("/bremen" + location.search + location.hash);</script>
+</head>
+<body>
+  <p>This page has moved to <a href="/bremen">thread.boston/bremen</a>.</p>
+</body>
+</html>
