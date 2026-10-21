@@ -14,7 +14,7 @@ Landing site for **Thresholds — A Golden Thread Initiative** in East Boston: a
 ## External libraries
 
 - **[Tailwind CSS](https://tailwindcss.com/) 3.4.16** — loaded via the Play CDN (`cdn.tailwindcss.com`), pinned to 3.4.16 for stability. Brand tokens (the `ink`/`gold` colors, `site` max-width, and font families) are configured in an inline `tailwind.config` block in each page's `<head>`.
-- **[Google Fonts](https://fonts.google.com/specimen/GFS+Didot)** — serves *GFS Didot*, the running-text serif.
+- **Georgia** — system serif for running text and the home page hero introduction; no external font download.
 - **Self-hosted fonts** (in `fonts/`, declared via `@font-face` in `site.css`) — *Lulo Clean One Bold* (display headings) and *Sackers Gothic* light/medium/heavy (wordmark and letterspaced caps).
 
 There are no other dependencies: interactivity (menu/citation dialogs, image lightbox, scroll reveal, hero parallax) is vanilla JavaScript in `site.js` using native browser APIs (`<dialog>`, `IntersectionObserver`).

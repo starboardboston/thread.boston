@@ -3,7 +3,7 @@
    Tailwind can't: @font-face, dialog ::backdrop, scroll-reveal, focus rings,
    and the skip link. */
 
-/* Self-hosted brand fonts from fonts/ (Didot comes from Google Fonts). */
+/* Self-hosted brand fonts from fonts/; Georgia uses the system serif font. */
 @font-face {
   font-family: "Lulo Clean One Bold";
   src: url("fonts/LuloCleanW01OneBold.otf") format("opentype");

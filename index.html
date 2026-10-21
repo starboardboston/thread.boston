@@ -30,10 +30,7 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#0B1E26">
 
-  <!-- GFS Didot (running text) from Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap" rel="stylesheet">
+  <!-- Georgia uses the system serif font; no external font download needed. -->
 
   <!-- Self-hosted brand fonts (declared in site.css); preloaded so the
        above-the-fold display/gothic text doesn't wait on CSS discovery. -->
@@ -58,7 +55,7 @@
           fontFamily: {
             display: ['"Lulo Clean One Bold"', '"Sackers Gothic"', 'sans-serif'], /* stamped display caps */
             gothic:  ['"Sackers Gothic"', 'sans-serif'],  /* wordmark, years & letterspaced caps (weights: light 300 / medium 500 / bold 700) */
-            serif:   ['"GFS Didot"', 'Didot', 'Georgia', 'serif'],                /* running text */
+            serif:   ['Georgia', '"Times New Roman"', 'serif'],                /* running text */
           },
         },
       },
@@ -121,9 +118,9 @@
   <header class="bg-ink">
     <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3">
       <a href="index.html" aria-label="Thresholds home">
-        <img src="grfx/GoldenThread-Header-WordmarkSlogan.svg"
-             alt="" width="210" height="56"
-             class="h-14 w-auto">
+        <img src="grfx/GoldenThread_Lockup_Horizontal.svg"
+             alt="The Golden Thread" width="883" height="199"
+             class="block h-auto w-60 max-w-full md:w-72">
       </a>
       <button data-opens-menu aria-label="Open menu" aria-haspopup="dialog" aria-controls="menu" aria-expanded="false" class="group -mr-2 flex flex-col items-end gap-2 p-2">
         <span class="h-0.5 w-10 bg-gold transition-all group-hover:w-8"></span>
@@ -159,7 +156,7 @@
 </p>
         </div>
     <div class="absolute inset-x-0 bottom-[11svh] z-10 mx-auto max-w-3xl px-7 text-center">
-    <p class="font-sans text-[1rem] font-light leading-[1.6] tracking-[0.025em] text-white/95 md:text-[1.2rem] md:leading-[1.6]">
+    <p class="font-serif text-[1rem] font-light leading-[1.6] tracking-[0.025em] text-white/95 md:text-[1.2rem] md:leading-[1.6]">
       The Golden Thread is a growing network of places weaving together East Boston’s story through history, innovation, and culture.
     </p>
   </div>

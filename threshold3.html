@@ -30,10 +30,7 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#0e1b1c">
 
-  <!-- GFS Didot (running text) from Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap" rel="stylesheet">
+  <!-- Georgia uses the system serif font; no external font download needed. -->
 
   <!-- Self-hosted brand fonts (declared in site.css); preloaded so the
        above-the-fold display/gothic text doesn't wait on CSS discovery. -->
@@ -58,7 +55,7 @@
           fontFamily: {
             display: ['"Lulo Clean One Bold"', '"Sackers Gothic"', 'sans-serif'], /* stamped display caps */
             gothic:  ['"Sackers Gothic"', 'sans-serif'],  /* wordmark, years & letterspaced caps (weights: light 300 / medium 500 / bold 700) */
-            serif:   ['"GFS Didot"', 'Didot', 'Georgia', 'serif'],                /* running text */
+            serif:   ['Georgia', '"Times New Roman"', 'serif'],                /* running text */
           },
         },
       },
@@ -108,9 +105,9 @@
   <header class="bg-ink">
     <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3">
       <a href="index.html" aria-label="Thresholds home">
-        <img src="grfx/GoldenThread-Header-WordmarkSlogan.svg"
-             alt="" width="210" height="56"
-             class="h-14 w-auto">
+        <img src="grfx/GoldenThread_Lockup_Horizontal.svg"
+             alt="The Golden Thread" width="883" height="199"
+             class="block h-auto w-60 max-w-full md:w-72">
       </a>
       <button data-opens-menu aria-label="Open menu" aria-haspopup="dialog" aria-controls="menu" aria-expanded="false" class="group -mr-2 flex flex-col items-end gap-2 p-2">
         <span class="h-0.5 w-10 bg-gold transition-all group-hover:w-8"></span>
