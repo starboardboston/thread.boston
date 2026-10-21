@@ -63,7 +63,7 @@
   </script>
 
   <!-- Shared styles: brand fonts, dialog backdrops, scroll reveal, focus rings -->
-  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site.css?v=20261021b">
 
   <script type="application/ld+json">
   {
@@ -118,9 +118,9 @@
   <header class="bg-ink">
     <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3">
       <a href="index.html" aria-label="Thresholds home">
-        <img src="grfx/GoldenThread_Lockup_Horizontal.svg"
-             alt="The Golden Thread" width="883" height="199"
-             class="block h-auto w-60 max-w-full md:w-72">
+        <img src="grfx/GoldenThread_Logomark_Gold.svg"
+             alt="The Golden Thread" width="1024" height="1024"
+             class="block h-14 w-14">
       </a>
       <button data-opens-menu aria-label="Open menu" aria-haspopup="dialog" aria-controls="menu" aria-expanded="false" class="group -mr-2 flex flex-col items-end gap-2 p-2">
         <span class="h-0.5 w-10 bg-gold transition-all group-hover:w-8"></span>
@@ -141,11 +141,12 @@
            width="1297" height="946"
            class="absolute -top-12 left-0 h-[calc(100%+3rem)] w-full max-w-none object-cover object-[49%_center] opacity-95 will-change-transform md:-left-[2%] md:w-[103%] md:object-[51%_center]"
            fetchpriority="high">
-      <!-- Teal tint + fade into the page background -->
-      <div class="absolute inset-0 bg-ink/20 mix-blend-multiply" aria-hidden="true"></div>
+      <!-- Header-blue overlay at 60% + fade into the page background -->
+      <div class="absolute inset-0 bg-ink/60" aria-hidden="true"></div>
       <div class="absolute inset-0 bg-gradient-to-b from-ink/30 via-transparent to-ink" aria-hidden="true"></div>
 
-      <div class="relative z-10 mx-auto mt-[8svh] w-full max-w-5xl px-5 text-center">
+      <div class="home-hero-content relative z-10 w-full text-center">
+      <div class="mx-auto w-full max-w-5xl px-5">
     <h1 class="font-display text-3xl leading-[1.0] text-gold md:text-5xl md:leading-[1.0]">
         WELCOME TO<br>
         <span class="inline-block mt-3">EAST BOSTON</span>
@@ -155,11 +156,17 @@
   LET US SHOW YOU AROUND.
 </p>
         </div>
-    <div class="absolute inset-x-0 bottom-[11svh] z-10 mx-auto max-w-3xl px-7 text-center">
+      <div class="home-hero-lockup">
+        <img src="grfx/GoldenThread_Lockup_Gold.svg"
+             alt="The Golden Thread — East Boston’s Story Trail" width="1024" height="1024"
+             class="block h-auto" fetchpriority="high">
+      </div>
+    <div class="mx-auto w-full max-w-3xl px-7 text-center">
     <p class="font-serif text-[1rem] font-light leading-[1.6] tracking-[0.025em] text-white/95 md:text-[1.2rem] md:leading-[1.6]">
       The Golden Thread is a growing network of places weaving together East Boston’s story through history, innovation, and culture.
     </p>
   </div>
+      </div>
       <!-- Scroll cue: chevron centered along the hero's bottom edge, leading into
            the story. Centered via inset-x + w-fit (not translate-x, which the
            bounce keyframes' transform would override). -->

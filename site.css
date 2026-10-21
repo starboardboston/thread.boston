@@ -98,3 +98,22 @@ body:has(#menu[open]) {
     transform: none;
   }
 }
+
+/* Equal space around the home hero lockup, with room to grow on short screens. */
+.home-hero-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 90svh;
+  padding-top: 8svh;
+  padding-bottom: 11svh;
+  gap: clamp(1.25rem, 3svh, 2.25rem);
+}
+.home-hero-lockup {
+  display: grid;
+  flex: 1;
+  place-items: center;
+}
+.home-hero-lockup img {
+  width: clamp(14rem, 36svh, 23rem);
+  max-width: 70vw;
+}
