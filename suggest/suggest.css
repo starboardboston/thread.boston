@@ -1,0 +1,117 @@
+/* Suggest a location: existing Golden Thread colors, wordmark, and fonts.
+   No build step, external CSS dependency, or JavaScript is needed. */
+:root {
+  color-scheme: dark;
+  --suggest-ink: #0b1e26;
+  --suggest-gold: #ccb283;
+  --suggest-text: #f7f4ee;
+  --suggest-muted: #b6c2c6;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--suggest-ink);
+  color: var(--suggest-text);
+  font-family: Georgia, "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--suggest-gold); color: var(--suggest-ink); }
+a { color: var(--suggest-gold); text-underline-offset: 4px; }
+a:hover { color: #f7e4c1; }
+.suggest-header {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.brand { display: block; flex: 0 1 288px; }
+.brand img { display: block; width: 100%; height: auto; }
+.back-link {
+  font: 500 13px/1.4 "Sackers Gothic", Arial, sans-serif;
+  text-decoration: none;
+  text-align: right;
+}
+.back-link span { margin-left: 5px; }
+.suggest-main { width: min(100% - 40px, 700px); margin: 48px auto 0; }
+.intro { margin: 0 0 32px; }
+.eyebrow {
+  margin: 0 0 18px;
+  font: 500 11px/1.7 "Sackers Gothic", Arial, sans-serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--suggest-gold);
+}
+h1 {
+  margin: 0;
+  color: var(--suggest-gold);
+  font: 700 clamp(24px, 5.6vw, 36px)/1.5 "Lulo Clean One Bold", Arial, sans-serif;
+}
+.lead { margin: 20px 0 12px; font-size: clamp(23px, 4.8vw, 29px); line-height: 1.35; }
+.intro-copy { max-width: 610px; margin: 0; font-size: 17px; line-height: 1.6; color: #d3dcdf; }
+.suggest-form {
+  border-top: 1px solid var(--suggest-gold);
+  padding-top: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.form-note { margin: 0 0 25px; font-size: 13px; line-height: 1.5; color: var(--suggest-muted); }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.field { min-width: 0; margin-bottom: 24px; }
+label { display: block; margin-bottom: 9px; font-size: 15px; font-weight: 600; line-height: 1.5; }
+.optional { color: var(--suggest-muted); font-size: 13px; font-weight: 400; }
+.field-help { margin: -3px 0 10px; color: var(--suggest-muted); font-size: 14px; line-height: 1.5; }
+input:not([type="hidden"]), textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 12px 13px;
+  border: 1px solid #64757b;
+  border-radius: 3px;
+  background: #122b35;
+  color: var(--suggest-text);
+  font: 400 16px/1.5 Arial, Helvetica, sans-serif;
+}
+textarea { resize: vertical; min-height: 110px; }
+input::placeholder, textarea::placeholder { color: #aebec4; opacity: 1; }
+input:focus, textarea:focus { border-color: var(--suggest-gold); outline: 2px solid var(--suggest-gold); outline-offset: 2px; }
+.suggest-form .form-trap { display: none; }
+.funding { margin: 3px 0 28px; padding: 18px 0; border-top: 1px solid #34474e; border-bottom: 1px solid #34474e; }
+.funding summary { cursor: pointer; color: var(--suggest-gold); font-size: 15px; font-weight: 600; line-height: 1.6; }
+.funding summary::marker { color: var(--suggest-gold); }
+.funding-content { padding-top: 20px; }
+.funding-content label { font-weight: 400; }
+.submit-button, .primary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: 52px;
+  padding: 16px 27px;
+  border: 1px solid var(--suggest-gold);
+  border-radius: 999px;
+  background: var(--suggest-gold);
+  color: var(--suggest-ink);
+  cursor: pointer;
+  font: 700 12px/1.5 "Sackers Gothic", Arial, sans-serif;
+  text-decoration: none;
+}
+.submit-button:hover, .primary-link:hover { background: #e2cba3; color: var(--suggest-ink); }
+.submit-button span { font: 400 22px/1 Arial, sans-serif; }
+.submission-note { margin: 18px 0 0; color: var(--suggest-muted); font-size: 13px; line-height: 1.8; }
+.suggest-footer { margin-top: 58px; padding: 28px 20px 38px; border-top: 1px solid #243b45; text-align: center; }
+.steward { display: inline-flex; flex-direction: column; align-items: center; gap: 15px; text-decoration: none; font: 300 10px/1.8 "Sackers Gothic", Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.steward img { display: block; width: 38px; height: 38px; }
+.thank-you { min-height: 48vh; padding: 26px 0; }
+.thank-you .intro-copy { margin: 20px 0 28px; }
+.secondary-link { display: inline-block; margin: 24px 0 0; font: 400 15px/1.5 Arial, sans-serif; }
+@media (max-width: 600px) {
+  .suggest-header { padding: 17px 20px; gap: 17px; }
+  .brand { flex-basis: 228px; }
+  .back-link { max-width: 82px; font-size: 10px; line-height: 1.7; }
+  .suggest-main { margin-top: 31px; }
+  .field-row { grid-template-columns: 1fr; gap: 0; }
+  .eyebrow { font-size: 10px; letter-spacing: .06em; }
+  .submit-button { width: 100%; }
+}

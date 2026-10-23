@@ -171,10 +171,7 @@
     </section>
 
     <!-- ============ Explore the golden thread (threshold cards) ============ -->
-    <!-- Card grid per the home mockup: 2-up on mobile, 3-up on desktop, ending
-         with the START cue. Each gold block is that threshold's photo slot;
-         until the photo asset is ready it carries the status text instead
-         ("Coming soon" / countdown). Every card links to its threshold page. -->
+    <!-- Five threshold cards plus an invitation to suggest the next place. -->
     <section id="story" class="relative mx-auto max-w-6xl px-4 pb-20 pt-10 md:pt-20">
       <h2 class="text-center font-display text-sm font-bold uppercase tracking-[0.1em] text-gold md:text-base">
         Explore<br>
@@ -234,14 +231,17 @@
           </a>
         </li>
 
-        <!-- START cue, pointing at Threshold 1 (the first stop on the trail; its page is still "coming soon") -->
+        <!-- Help the Golden Thread grow. -->
         <li>
-          <a href="threshold1.html" aria-label="Start at Threshold 1, The Golden Stairs"
-             class="group flex aspect-[8/5] items-center justify-center gap-2 font-gothic text-sm font-bold uppercase tracking-[0.25em] text-gold transition-opacity hover:opacity-75 md:text-base">
-            Start
-            <svg class="h-6 w-6 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9 5l7 7-7 7"/>
-            </svg>
+          <a href="/suggest/" class="group block">
+            <span class="flex aspect-[8/5] flex-col items-center justify-center gap-3 border border-gold/60 text-gold transition-colors group-hover:bg-gold/10">
+              <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 7v10M7 12h10" />
+              </svg>
+              <span class="font-gothic text-xs font-bold uppercase tracking-[0.15em] md:text-sm">Where next?</span>
+            </span>
+            <span class="mt-3 block font-gothic text-xs font-bold uppercase leading-relaxed tracking-[0.15em] text-white">Suggest a place</span>
           </a>
         </li>
       </ul>
@@ -426,6 +426,12 @@
             <li>
               <a href="bremen.html" class="inline-block font-gothic text-gold transition-colors hover:text-white">
                 <span class="text-xs uppercase">Threshold 5</span><br /><span class="text-xl font-bold uppercase">Bremen Street Park</span>
+              </a>
+            </li>
+
+            <li class="border-t border-gold/30 pt-5">
+              <a href="/suggest/" class="inline-block font-gothic text-gold transition-colors hover:text-white">
+                <span class="text-xs uppercase">Help the trail grow</span><br /><span class="text-xl font-bold uppercase">Suggest a place</span>
               </a>
             </li>
           </ul>

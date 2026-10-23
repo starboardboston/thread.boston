@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suggest a Place | The Golden Thread</title>
+  <meta name="description" content="An East Boston place. A story worth sharing. Suggest a future Golden Thread location—history, art, culture, science, nature, and more.">
+  <link rel="canonical" href="https://thread.boston/suggest/">
+  <meta property="og:site_name" content="The Golden Thread | East Boston">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Where should the Golden Thread go next?">
+  <meta property="og:description" content="An East Boston place. A story worth sharing. Help shape the trail by suggesting a future location.">
+  <meta property="og:url" content="https://thread.boston/suggest/">
+  <meta property="og:image" content="https://thread.boston/grfx/og/og-home-new.JPEG">
+  <meta property="og:image:alt" content="A Golden Thread threshold beside Boston Harbor">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0B1E26">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/grfx/Starboard-Logo-Bright-Transparent.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/fonts/LuloCleanW01OneBold.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="/site.css?v=20261021c">
+  <link rel="stylesheet" href="/suggest/suggest.css?v=20261023">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="suggest-header">
+    <a class="brand" href="/" aria-label="The Golden Thread home">
+      <img src="/grfx/GoldenThread_Lockup_Horizontal.svg" alt="The Golden Thread" width="883" height="199">
+    </a>
+    <a class="back-link" href="/#story">Explore the trail <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="main" class="suggest-main">
+    <div class="intro">
+      <p class="eyebrow">Help grow the Golden Thread</p>
+      <h1>Suggest a place</h1>
+      <p class="lead">An East Boston place.<br>A story worth sharing.</p>
+      <p class="intro-copy">History, art, culture, science, nature, or something we haven’t thought of. Tell us what belongs on the trail.</p>
+    </div>
+
+    <!-- FormSubmit delivers to David after its one-time email activation.
+         Keep the default CAPTCHA enabled. Setup instructions are in README.md. -->
+    <form class="suggest-form" action="https://formsubmit.co/david@starboard.boston" method="POST" accept-charset="UTF-8">
+      <input type="hidden" name="_subject" value="New Golden Thread location suggestion">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_url" value="https://thread.boston/suggest/">
+      <input type="hidden" name="_next" value="https://thread.boston/suggest/thanks/">
+      <input class="form-trap" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <p class="form-note">Only the place name and story are required.</p>
+      <div class="field-row">
+        <div class="field">
+          <label for="place">Place name</label>
+          <input id="place" name="Place name" type="text" required maxlength="200" placeholder="What’s the place called?">
+        </div>
+        <div class="field">
+          <label for="address">Address or location <span class="optional">(optional)</span></label>
+          <input id="address" name="Address or location" type="text" maxlength="350" placeholder="Street, intersection, or landmark">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="story">What’s the story?</label>
+        <p class="field-help" id="story-help">What makes this place worth sharing? A few sentences is plenty.</p>
+        <textarea id="story" name="Story" rows="5" required maxlength="10000" aria-describedby="story-help"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="contact">Your name and contact info <span class="optional">(optional)</span></label>
+        <p class="field-help" id="contact-help">Leave an email or phone number if you’d like us to follow up.</p>
+        <input id="contact" name="Submitter contact" type="text" maxlength="500" aria-describedby="contact-help" placeholder="Name, email, and/or phone">
+      </div>
+
+      <details class="funding">
+        <summary>Have a funding idea? <span class="optional">(optional)</span></summary>
+        <div class="funding-content">
+          <label for="funding">Potential sponsors, grants, or partners</label>
+          <p class="field-help" id="funding-help">Each marker needs to be designed, permitted, fabricated, and installed. Share any ideas for supporting that work. No funding commitment is needed to suggest a place.</p>
+          <textarea id="funding" name="Marker funding ideas" rows="3" maxlength="5000" aria-describedby="funding-help"></textarea>
+        </div>
+      </details>
+
+      <button class="submit-button" type="submit">Send suggestion <span aria-hidden="true">→</span></button>
+      <p class="submission-note">Your suggestion goes to Project Starboard.<br>Prefer email? <a href="mailto:david@starboard.boston?subject=Golden%20Thread%20location%20suggestion">david@starboard.boston</a></p>
+    </form>
+  </main>
+
+  <footer class="suggest-footer">
+    <a href="https://starboard.boston" class="steward">
+      <img src="/grfx/Starboard-Logo-Bright-Transparent.svg" alt="" width="38" height="38">
+      <span>Stewarded by Project Starboard</span>
+    </a>
+  </footer>
+</body>
+</html>

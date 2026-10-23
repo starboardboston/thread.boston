@@ -34,3 +34,45 @@ Alternative if you prefer Node:
 ```bash
 npx serve .
 ```
+
+## Location suggestions — added October 23, 2026
+
+`suggest/index.html` serves **https://thread.boston/suggest/**. Visiting
+`https://thread.boston/suggest` redirects to the directory URL automatically.
+Upload the whole `suggest` folder, including its `thanks` subfolder, to the
+repository root alongside `index.html`. There is no build step or new package.
+The home-page sixth tile and the menus on the home and threshold pages link here.
+
+The page uses the existing logo, self-hosted fonts, navy (`#0B1E26`), and gold
+(`#ccb283`). Its small `suggest/suggest.css` stylesheet does not need Tailwind or
+JavaScript. Only **Place name** and **Story** are required. Address/location,
+submitter contact, and funding ideas are optional; the funding section expands
+on demand. Suggestions do not require a funding commitment.
+
+### Enable email delivery (one-time step)
+
+The form posts to **https://formsubmit.co/david@starboard.boston**. FormSubmit
+provides the email backend for this static GitHub Pages site without an API key
+or account signup. Its default CAPTCHA remains enabled, with an additional
+hidden honeypot. Every visible field is named so it is included in the email.
+
+1. Publish these files to the existing GitHub Pages repository.
+2. Visit **https://thread.boston/suggest/** and submit a clearly marked setup
+   test, such as place name **SETUP TEST — please ignore** and story
+   **Testing Golden Thread suggestion email delivery.** Leave optional fields
+   blank to verify anonymous suggestions work.
+3. Open the activation message sent to **david@starboard.boston** and click its
+   confirmation link. Check the spam folder if necessary. The form is not
+   activated just by uploading these files.
+4. Submit one more clearly marked test and confirm the email arrives with
+   subject **New Golden Thread location suggestion**. After any CAPTCHA,
+   successful submissions return to **https://thread.boston/suggest/thanks/**.
+
+Activation and live inbox delivery were **not** performed or verified when
+preparing this update. Complete the above steps before promoting the form.
+The page also offers a direct email link as a fallback. Contact information is
+one optional text field, allowing a name, phone, email, or a combination; a
+submitter email address is not required and automatic Reply-To is not configured.
+
+Provider documentation: https://formsubmit.co/documentation
+Activation and troubleshooting: https://formsubmit.co/help
